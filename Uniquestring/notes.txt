@@ -1,0 +1,9 @@
+Question: Implement an algorithm to determine if a string has all unique characters. What if you
+cannot use additional data structures?
+
+
+Discussion: 
+
+Approach 1: Create an outer loop that picks each character and an inner loop that compares the character in the outer loop to all 
+it to all other characters in the string except itself(If you compare with itself, then the algorithm will be wrong because it will
+indicate that the character is not unique in the string).
