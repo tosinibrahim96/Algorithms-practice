@@ -4,6 +4,23 @@ cannot use additional data structures?
 
 Discussion: 
 
-Approach 1: Create an outer loop that picks each character and an inner loop that compares the character in the outer loop to all 
-it to all other characters in the string except itself(If you compare with itself, then the algorithm will be wrong because it will
-indicate that the character is not unique in the string).
+Approach 1: 
+- Create an outer loop that loops through all characters
+- Create an inner loop that loops through all characters too, but the starting point should be 1 character
+to the right based on the current character of the outer loop. ie (if i =1, j=i+1);
+- Keep iterating in the inner loop, and on each iteration, compare the current character to the character in the outer loop
+- Return false if any of the comparison evaluates to true (since we have the same character in 2 positions of the same string) 
+- If the iteration of the outer loop is done and the inner loop didn't return false at any point, it means the string contains only
+unique characters, hence we can now return true.
+
+Approach2: 
+- Create an empty map object
+- Create a loop that iterates through each character of the string
+- On each iteration, check of the map contains a key with the current character,
+  if false, set a new key on the object using the current character and the value to be true
+  if true, then return false (We have set the key before and we are encountering it again)
+
+Approach3:
+- Sort the string
+- Compare each value to the next
+- If the next value is the same as the previous, return false, else return true
