@@ -1,0 +1,27 @@
+Question: Given two strings, write a method to decide if one is a permutation of the other.
+
+
+Discussion: 
+
+Approach 1: 
+- Check length first to exit as soon as possible if both strings are not of the same length
+- Sort both strings
+- Compare if they are the same
+
+Approach 2:
+- Check length first to exit as soon as possible if both strings are not of the same length
+- Create a map object with string 1 where the key is the current string and the value is how many times the
+  string has been encountered 
+- create a map object with string 2 where the key is the current string and the value is how many times the
+  string has been encountered 
+- Since we know they are both the same length now, pick any of the mapped string and loop through. In each iteration,
+the current string must be present in the second map and must also be the same number
+
+
+Approach 3:
+ - Check length first to exit as soon as possible if both strings are not of the same length
+ - Create a map object using any of the given strings. The keys should be each character in the string 
+ while the value should be the number of times the character appears
+ - Loop through the second string that has not been converted If you try to get that string from the map object and 
+ it is of type 'undefined', return false. If it exists, decrement it. After decrementing, check if the new value is less than 0
+ if it is, return false. Do this continously for all characters and return true if the loop never returns false 
