@@ -1,0 +1,15 @@
+Question: Given a string, write a function to check if it is a permutation of a palindrome.
+
+Discussion:
+A palindrome is a string that read the same forwards and backwards and strings can be either even or odd 
+number of characters. For a string with even number of characters, then it can only be a palindrome if the number 
+of each character is even.I.e no character should be 1,3 etc. For a string with an odd number of characters,
+it can only be a valid palindrome if the number of each character in the string is even except 1. If more than one
+character has an even number count, then it's not a palindrome. 
+
+
+Approach 1:
+  - Create a map object using the string
+  - The keys should be the characters and the value of each key should indicate how many times they apear in the string
+  - Another for loop will be created to check the values in the string map to make sure that we have even number for each
+  character or only one odd number while the rest are even
