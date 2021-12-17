@@ -9,7 +9,24 @@ character has an even number count, then it's not a palindrome.
 
 
 Approach 1:
+  - Convert the string to lower case
   - Create a map object using the string
   - The keys should be the characters and the value of each key should indicate how many times they apear in the string
   - Another for loop will be created to check the values in the string map to make sure that we have even number for each
   character or only one odd number while the rest are even
+
+
+Approach 2:
+  Ultimately, a map object will be created using the string, but that's not the most important part. This aproach tries to
+  count the number of odd characters in the string during the character map process(inside the loop)
+  - Convert the string to lower case
+  - A variable to track the number of odd characters is initialized and set to 0
+  - A loop to build the mapped string object is created,
+  - In the loop, check if the current character is an empty string, if yes, continue
+  - If not, check if it already exist in the object, if not, add it to the map as the key,
+  with the corresponding value 1. Since one is an odd number, the variable tracking the number of odd numbers
+  should be incremented, then continue
+  - If the character already exist in the object as a key, then increment the value, but before moving on to the next character,
+  check if the current value (which represents how many times the current character has appeared) is even, if it is even, then 
+  decrement the variable tracking the number of odd characters, if it's odd, increment it 
+

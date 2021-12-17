@@ -1,0 +1,19 @@
+Question: Write a method to replace all spaces in a string with '%20'. You may assume that the string
+has sufficient space at the end to hold the additional characters, and that you are given the "true"
+length of the string.
+
+Discussion:
+
+Approach 1:
+  - If string is empty, return null
+  - Perform a string replace where empty strings are replaced with %20
+
+Approach 2:
+  - Set an initial empty string that will be used as the output
+  - Since we'll be looping through the string and we want to stop at the 
+  original string length, initialize a tracker that increments on each iteration.
+  The initial value = 0.
+  - Create a forOf loop for the string. The first thing to check is if the tracker is 
+  eqaul to the original string length. If that's true, return the current value of "output(the new empty string previously initialized"
+  The second check before concatenation is if the current character is an empty string. If that's true, the the current character variable
+  should be set to "%20", then added to the output string. If the current character is not an empty string, then just concatenate straight.

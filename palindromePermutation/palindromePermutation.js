@@ -2,6 +2,8 @@ const buildCharacterFrequencyTable = (str) => {
   let strMap = new Map();
   str = str.toLowerCase();
 
+  let oddCharactersCount = 0;
+
   for (char of str) {
     
     if (char == " ") {
@@ -13,27 +15,39 @@ const buildCharacterFrequencyTable = (str) => {
     
     if (typeof value == "undefined") {
       strMap.set(char, 1);
+      oddCharactersCount +=1;
       continue;
     }
 
     value += 1;
     strMap.set(char, value);
-  }
-
-  console.log(strMap);
-  return strMap;
-};
-
-const getOddCharactersCount = (charcterFrequencyTable)=>{
-  let oddCharactersCount = 0;
-  for ([key, value] of charcterFrequencyTable) {
     if (value % 2 != 0) {
       oddCharactersCount += 1;
+    }else{
+      oddCharactersCount -=1
     }
+    
   }
+  
+  return oddCharactersCount <= 1;
+};
 
-  return oddCharactersCount;
-}
+// const getOddCharactersCount = (charcterFrequencyTable)=>{
+//   let oddCharactersCount = 0;
+//   for ([key, value] of charcterFrequencyTable) {
+//     if (value % 2 != 0) {
+//       oddCharactersCount += 1;
+//     }
+//   }
+
+//   return oddCharactersCount;
+// }
+
+
+// const palindromePermutation = (str) => {
+//   let charcterFrequencyTable = buildCharacterFrequencyTable(str);
+//   return getOddCharactersCount(charcterFrequencyTable) <= 1;
+// };
 
 
 const palindromePermutation = (str) => {
